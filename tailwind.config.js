@@ -12,7 +12,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                amiko: ['Amiko', 'sans-serif'],
+                montserrat: ['Montserrat', 'sans-serif'],
             },
         },
     },

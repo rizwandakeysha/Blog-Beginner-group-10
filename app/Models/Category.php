@@ -9,12 +9,18 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $table = 'categories';
+
     protected $fillable = [
-        'name'
+        'name',
     ];
 
+    // Menonaktifkan penggunaan timestamps
+    public $timestamps = false;
+
+    // Relasi ke Articles (one-to-many)
     public function articles()
     {
-        return $this->hasMany(Article::class);
+        return $this->hasMany(Article::class, 'category_id');
     }
 }
