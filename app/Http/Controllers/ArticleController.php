@@ -80,9 +80,6 @@ class ArticleController extends Controller
         return view('blog.edit', compact('article', 'categories'));
     }
 
-
-
-
     public function update(Request $request, $id)
     {
         $validated = $request->validate([

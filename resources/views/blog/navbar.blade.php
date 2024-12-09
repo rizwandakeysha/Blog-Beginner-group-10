@@ -11,7 +11,7 @@
     <div class="container mx-auto px-4 py-5 flex justify-between items-center">
         <!-- Nama Website -->
         <a href="{{ route('home') }}" class="text-xl font-semibold text-gray-800">
-            Blog Kelompok 11
+            Blog Kelompok 10 
         </a>
         <a href="{{ route('article.create') }}" class="font-bold text-lg">Buat Artikel</a>
         <a href="{{ route('tags.index') }}" class="font-bold text-lg">Tags</a>

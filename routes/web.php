@@ -11,12 +11,16 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
+//ini nanti gapelu /login lagi jadi / nya kosongan dan langsung ke beranda 
+Route::get('/', [ArticleController::class, 'index'])->name('home');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/', [ArticleController::class, 'index'])->name('home');
+ 
 
     // Halaman Tambah Artikel
     Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
