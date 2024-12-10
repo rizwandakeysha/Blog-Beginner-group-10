@@ -47,6 +47,18 @@
                           class="w-full mt-2 p-2 border border-gray-300 rounded">{{ $article->full_text }}</textarea>
             </div>
 
+            <div>
+    <label class="block text-sm font-semibold text-gray-700 pb-2">Tags</label>
+    @foreach($tags as $tag)
+        <div class="flex items-center mb-2">
+            <input type="checkbox" name="tags[]" value="{{ $tag->id }}" id="tag_{{ $tag->id }}" 
+                   class="mr-2" 
+                   {{ in_array($tag->id, $selectedTags) ? 'checked' : '' }}>
+            <label for="tag_{{ $tag->id }}" class="text-sm text-gray-700">{{ $tag->name }}</label>
+        </div>
+    @endforeach
+</div>
+
             <!-- Tombol Submit -->
             <button type="submit" 
                     class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">

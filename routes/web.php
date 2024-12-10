@@ -11,23 +11,14 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
-//ini nanti gapelu /login lagi jadi / nya kosongan dan langsung ke beranda 
-Route::get('/', [ArticleController::class, 'index'])->name('home');
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
- 
-
     // Halaman Tambah Artikel
     Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
     Route::post('/article', [ArticleController::class, 'store'])->name('article.store');
-
-    // Halaman Detail Artikel
-    Route::get('/article/{id}', [ArticleController::class, 'show'])->name('article.show');
 
     // Halaman Edit Artikel
     Route::get('/article/{id}/edit', [ArticleController::class, 'edit'])->name('article.edit');
@@ -54,4 +45,10 @@ Route::middleware('auth')->group(function () {
 });
 
 
-require __DIR__.'/auth.php';
+//ini nanti gaperlu /login lagi jadi / nya kosongan dan langsung ke beranda 
+Route::get('/', [ArticleController::class, 'index'])->name('home');
+
+// Halaman Detail Artikel
+Route::get('/article/{id}', [ArticleController::class, 'show'])->name('article.show');
+
+require __DIR__ . '/auth.php';

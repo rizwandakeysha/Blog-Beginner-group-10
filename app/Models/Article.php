@@ -10,6 +10,7 @@ class Article extends Model
     use HasFactory;
 
     protected $table = 'articles';
+    
 
     // Menonaktifkan timestamps
     public $timestamps = false;

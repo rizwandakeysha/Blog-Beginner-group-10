@@ -13,10 +13,12 @@
         <a href="{{ route('home') }}" class="text-xl font-semibold text-gray-800">
             Blog Kelompok 10 
         </a>
+        @auth
         <a href="{{ route('article.create') }}" class="font-bold text-lg">Buat Artikel</a>
         <a href="{{ route('tags.index') }}" class="font-bold text-lg">Tags</a>
         <a href="{{ route('categories.index') }}" class="font-bold text-lg">Kategori</a>
         <a href="{{ route('about') }}" class="font-bold text-lg">Tentang</a>
+        @endauth
 
         <!-- Profil -->
         <div class="flex items-center space-x-4">
